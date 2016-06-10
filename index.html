@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <h1>Sup?</h1>
+    <div id="container"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script>
+      console.log("sup?");
+      var radius1 = 50;
+      var xSeperation = 50;
+      var disX = 400;
+      var disY = 200;
+      var radius2 = findRadius(radius1, xSeperation);
+      var theta1 = 0;
+      var quotient = xSeperation / radius2;
+      var theta2 = Math.asin(quotient);
+      function createDot()
+      {
+        var left1 = findDirection(theta1, radius1, disX, Math.cos);
+        var top1 = findDirection(theta1, radius1, disY, Math.sin);
+        var left2 = findDirection(theta2, radius2, disX, Math.cos);
+        var top2 = findDirection(theta2, radius2, disY,Math.sin);
+
+        var style1 = `position: absolute; left: ${left1}px; top: ${top1}px`;
+        var style2 = `position: absolute; left: ${left2}px; top: ${top2}px`;
+
+        var element1 = `<span class='dot' style="${style1}">.</span>`;
+        var element2 = `<span class='dot' style="${style2}">.</span>`
+        $("#container").append(element1);
+        $("#container").append(element2);
+      }
+
+      function findDirection(angle, radius, displacement, func)
+      {
+        return radius * func(angle) + displacement;
+      }
+
+      function findRadius(x, y)
+      {
+        var x2 = x * x;
+        var y2 = y * y;
+        var sum = x2 + y2;
+        var d = Math.sqrt(sum);
+        return d;
+      }
+
+      function intervalFunction()
+      {
+        createDot();
+        theta1 += .01;
+        theta2 += .01;
+      }
+       setInterval(intervalFunction,
+        20);
+    </script>
+  </body>
+</html>
