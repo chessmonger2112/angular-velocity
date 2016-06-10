@@ -1,0 +1,27 @@
+   .red {
+      color:red;
+    }
+
+    #miniContainer1 {
+      position: absolute;
+      left: 0;
+      top: 100px;
+    }
+
+    #miniContainer2 {
+      position: absolute;
+      left: 0;
+      top: 117px;
+    }
+
+    #startButton {
+      position: absolute;
+      left: 220px;
+      top: 100px;
+      height: 5.7%
+    }
+
+    h1 {
+      width: 100%;
+      text-align: center;
+    }
