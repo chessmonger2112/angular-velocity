@@ -1,27 +1,35 @@
-   .red {
-      color:red;
-    }
+.red {
+  color:red;
+}
 
-    #miniContainer1 {
-      position: absolute;
-      left: 0;
-      top: 100px;
-    }
+#miniContainer1 {
+  position: absolute;
+  left: 0;
+  top: 100px;
+}
 
-    #miniContainer2 {
-      position: absolute;
-      left: 0;
-      top: 117px;
-    }
+#miniContainer2 {
+  position: absolute;
+  left: 0;
+  top: 117px;
+}
 
-    #startButton {
-      position: absolute;
-      left: 220px;
-      top: 100px;
-      height: 5.7%
-    }
+#startButton {
+  position: absolute;
+  left: 220px;
+  top: 100px;
+  height: 20px;
+}
 
-    h1 {
-      width: 100%;
-      text-align: center;
-    }
+h1 {
+  width: 100%;
+  text-align: center;
+}
+
+#seperationInput {
+  position: absolute;
+}
+
+.inputs {
+  height: 10px;
+}

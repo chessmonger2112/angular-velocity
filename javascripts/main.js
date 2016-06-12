@@ -1,13 +1,14 @@
 console.log("sup?");
 var radius1 = 10;
+var radius2;
 var xSeperation = 50;
 var disX = 400;
 var disX = $("body").width() / 2;
 var disY = 200;
-var radius2 = findRadius(radius1, xSeperation);
 var theta1 = 0;
-var quotient = xSeperation / radius2;
-var theta2 = Math.asin(quotient);
+var theta2;
+
+$("#seperationInput").css("left", $("#radiusInput").position().left + "px");
 
 function createDot(theta, radius, color)
 {
@@ -47,8 +48,11 @@ function intervalFunction()
 
 function startCircles()
 {
- setInterval(intervalFunction,
-  20);
+  radius2 = findRadius(radius1, xSeperation);
+  var quotient = xSeperation / radius2;
+  theta2 = Math.asin(quotient);
+  setInterval(intervalFunction,
+    20);
 }
 
 $("#startButton").click(function(){
